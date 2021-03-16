@@ -1,0 +1,41 @@
+#ustawienia
+
+#Poniedziałek
+link1 = 
+https://www.underthepebble.pl/ #przykłady jak mają być wpisywane linki
+godzina1 = 
+08:50
+godzina2 =
+09:10
+
+#Wtorek
+link2 = 
+https://www.underthepebble.pl/
+godzina1 =
+08:50
+godzina2 =
+09:10
+
+#Środa
+link3 = 
+https://www.underthepebble.pl/
+godzina1 =
+08:50
+godzina2 =
+09:10
+
+#Czwartek
+link4 = 
+https://www.underthepebble.pl/
+godzina1 = 
+07:50
+godzina2=
+08:10
+
+#Piątek
+link5 =
+https://www.underthepebble.pl/
+godzina1 =
+08:50
+godzina2 =
+09:10
