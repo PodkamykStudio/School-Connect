@@ -1,6 +1,10 @@
 #ustawienia
 
 #Poniedziałek
+dziala =
+1
+shutdown =
+0
 link1 = 
 https://www.underthepebble.pl/ #przykłady jak mają być wpisywane linki
 godzina1 = 
@@ -9,6 +13,10 @@ godzina2 =
 09:10
 
 #Wtorek
+dziala =
+1
+shutdown =
+0
 link2 = 
 https://www.underthepebble.pl/
 godzina1 =
@@ -17,6 +25,10 @@ godzina2 =
 09:10
 
 #Środa
+dziala =
+1
+shutdown =
+0
 link3 = 
 https://www.underthepebble.pl/
 godzina1 =
@@ -25,17 +37,50 @@ godzina2 =
 09:10
 
 #Czwartek
-link4 = 
+dziala =
+1
+shutdown =
+1
+link4 =
 https://www.underthepebble.pl/
 godzina1 = 
-07:50
+00:05
 godzina2=
 08:10
 
 #Piątek
+dziala =
+1
+shutdown =
+0
 link5 =
 https://www.underthepebble.pl/
 godzina1 =
 08:50
 godzina2 =
 09:10
+
+#Sobota
+dziala =
+1
+shutdown =
+1
+link6 =
+https://www.underthepebble.pl/
+godzina1 =
+08:50
+godzina2=
+09:10
+
+#Niedziela
+dziala =
+1
+shutdown =
+1
+link7 =
+https://www.underthepebble.pl/
+godzina1 =
+08:50
+godzina2=
+09:10
+
