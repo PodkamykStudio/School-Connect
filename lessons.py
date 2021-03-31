@@ -1,57 +1,9 @@
 import datetime, time, webbrowser, os, getpass
 from pathlib import Path
 
-user = getpass.getuser()
-day = datetime.datetime.today().weekday()
-czas = datetime.datetime.now().strftime("%H:%M")
-file = open(f"{Path.home()}\\Documents\\Under the Pebble\\School Connect\\settings.txt")
-settings = file.readlines()
-file.close()
-
-print(settings)
-if day == 0:
-    link1 = settings[4]
-    godzina1 = settings[6]
-    godzina2 = settings[8]
-
+def shutdown(godzina1, godzina2):
+    czas = datetime.datetime.now().strftime("%H:%M")
     if godzina1 <= czas <= godzina2:
-        webbrowser.open(link1)
-
-if day == 1:
-    link2 = settings[12]
-    godzina1 = settings[14]
-    godzina2 = settings[16]
-
-    if godzina1 <= czas <= godzina2:
-        webbrowser.open(link2)
-
-if day == 2:
-    link3 = settings[20]
-    godzina1 = settings[22]
-    godzina2 = settings[24]
-
-    if godzina1 <= czas <= godzina2:
-        webbrowser.open(link3)
-
-if day == 3:
-    link4 = settings[28]
-    godzina1 = settings[30]
-    godzina2 = settings[32]
-
-    if godzina1 <= czas <= godzina2:
-        webbrowser.open(link4)
-
-if day == 4:
-    link5 = settings[36]
-    godzina1 = settings[38]
-    godzina2 = settings[40]
-
-    if godzina1 <= czas <= godzina2:
-        webbrowser.open(link5)
-
-if day == 5 or day == 6:
-
-    if "08:50" <= czas <= "09:00":
         print("Masz 30 sekund aby zamknąć to okno inaczej komputer się wyłączy")
         for i in range(1, 31):
             time.sleep(1)
@@ -60,3 +12,102 @@ if day == 5 or day == 6:
         else:
             print("Zaraz nastąpi wyłączenie systemu")
             os.system("shutdown /s /t 5")
+
+user = getpass.getuser()
+day = datetime.datetime.today().weekday()
+czas = datetime.datetime.now().strftime("%H:%M")
+file = open(f"{Path.home()}\\Documents\\Under the Pebble\\School Connect\\settings.txt")
+settings = file.readlines()
+file.close()
+
+
+if day == 0:
+    dziala = settings[4].strip()
+    shutdown_now = settings[6].strip()
+    link1 = settings[8]
+    godzina1 = settings[10]
+    godzina2 = settings[12]
+
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link1)
+
+if day == 1:
+    dziala = settings[16].strip()
+    shutdown_now = settings[18].strip()
+    link2 = settings[20]
+    godzina1 = settings[22]
+    godzina2 = settings[24]
+
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link2)
+
+if day == 2:
+    dziala = settings[28].strip()
+    shutdown_now = settings[30].strip()
+    link3 = settings[32]
+    godzina1 = settings[34]
+    godzina2 = settings[36]
+
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link3)
+if day == 3:
+    dziala = settings[40].strip()
+    shutdown_now = settings[42].strip()
+    link4 = settings[44]
+    godzina1 = settings[46]
+    godzina2 = settings[48]
+
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link4)
+
+if day == 4:
+    dziala = settings[52].strip()
+    shutdown_now = settings[54].strip()
+    link5 = settings[56]
+    godzina1 = settings[58]
+    godzina2 = settings[60]
+
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link5)
+
+if day == 5:
+    dziala = settings[64].strip()
+    shutdown_now = settings[66].strip()
+    link6 = settings[68]
+    godzina1 = settings[70]
+    godzina2 = settings[72]
+
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link6)
+
+if day == 6:
+    dziala = settings[76].strip()
+    shutdown_now = settings[78].strip()
+    link7 = settings[80]
+    godzina1 = settings[82]
+    godzina2 = settings[84]
+
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link7)
+
