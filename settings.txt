@@ -40,7 +40,7 @@ godzina2 =
 dziala =
 1
 shutdown =
-1
+0
 link4 =
 https://www.underthepebble.pl/
 godzina1 = 
