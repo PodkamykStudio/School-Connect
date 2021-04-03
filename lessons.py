@@ -1,4 +1,4 @@
-import datetime, time, webbrowser, os, getpass
+import datetime, time, webbrowser, os
 from pathlib import Path
 
 def shutdown(godzina1, godzina2):
@@ -13,7 +13,13 @@ def shutdown(godzina1, godzina2):
             print("Zaraz nastąpi wyłączenie systemu")
             os.system("shutdown /s /t 5")
 
-user = getpass.getuser()
+def function(link):
+    if dziala == "1":
+        if shutdown_now == "1":
+            shutdown(godzina1,godzina2)
+        elif godzina1 <= czas <= godzina2:
+            webbrowser.open(link)
+
 day = datetime.datetime.today().weekday()
 czas = datetime.datetime.now().strftime("%H:%M")
 file = open(f"{Path.home()}\\Documents\\Under the Pebble\\School Connect\\settings.txt")
@@ -28,11 +34,7 @@ if day == 0:
     godzina1 = settings[10]
     godzina2 = settings[12]
 
-    if dziala == "1":
-        if shutdown_now == "1":
-            shutdown(godzina1,godzina2)
-        elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link1)
+    function(link1)
 
 if day == 1:
     dziala = settings[16].strip()
@@ -41,11 +43,7 @@ if day == 1:
     godzina1 = settings[22]
     godzina2 = settings[24]
 
-    if dziala == "1":
-        if shutdown_now == "1":
-            shutdown(godzina1,godzina2)
-        elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link2)
+    function(link2)
 
 if day == 2:
     dziala = settings[28].strip()
@@ -54,11 +52,8 @@ if day == 2:
     godzina1 = settings[34]
     godzina2 = settings[36]
 
-    if dziala == "1":
-        if shutdown_now == "1":
-            shutdown(godzina1,godzina2)
-        elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link3)
+    function(link3)
+
 if day == 3:
     dziala = settings[40].strip()
     shutdown_now = settings[42].strip()
@@ -66,11 +61,7 @@ if day == 3:
     godzina1 = settings[46]
     godzina2 = settings[48]
 
-    if dziala == "1":
-        if shutdown_now == "1":
-            shutdown(godzina1,godzina2)
-        elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link4)
+    function(link4)
 
 if day == 4:
     dziala = settings[52].strip()
@@ -79,11 +70,7 @@ if day == 4:
     godzina1 = settings[58]
     godzina2 = settings[60]
 
-    if dziala == "1":
-        if shutdown_now == "1":
-            shutdown(godzina1,godzina2)
-        elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link5)
+    function(link5)
 
 if day == 5:
     dziala = settings[64].strip()
@@ -92,11 +79,7 @@ if day == 5:
     godzina1 = settings[70]
     godzina2 = settings[72]
 
-    if dziala == "1":
-        if shutdown_now == "1":
-            shutdown(godzina1,godzina2)
-        elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link6)
+    function(link6)
 
 if day == 6:
     dziala = settings[76].strip()
@@ -105,9 +88,5 @@ if day == 6:
     godzina1 = settings[82]
     godzina2 = settings[84]
 
-    if dziala == "1":
-        if shutdown_now == "1":
-            shutdown(godzina1,godzina2)
-        elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link7)
-
+    function(link7)
+    
