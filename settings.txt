@@ -44,9 +44,9 @@ shutdown =
 link4 =
 https://www.underthepebble.pl/
 godzina1 = 
-00:05
-godzina2=
-08:10
+08:50
+godzina2 =
+09:10
 
 #Piątek
 dziala =
@@ -69,7 +69,7 @@ link6 =
 https://www.underthepebble.pl/
 godzina1 =
 08:50
-godzina2=
+godzina2 =
 09:10
 
 #Niedziela
@@ -81,6 +81,5 @@ link7 =
 https://www.underthepebble.pl/
 godzina1 =
 08:50
-godzina2=
+godzina2 =
 09:10
-
