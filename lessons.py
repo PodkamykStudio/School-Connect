@@ -1,24 +1,42 @@
 import datetime, time, webbrowser, os
 from pathlib import Path
 
+
+
 def shutdown(godzina1, godzina2):
     czas = datetime.datetime.now().strftime("%H:%M")
-    if godzina1 <= czas <= godzina2:
-        print("Masz 30 sekund aby zamknąć to okno inaczej komputer się wyłączy")
-        for i in range(1, 31):
-            time.sleep(1)
-            print("\r", i, end="")
+    language = settings[1].strip()
+    if language == "pl":
+        if godzina1 <= czas <= godzina2:
+            print("Masz 30 sekund aby zamknąć to okno inaczej komputer się wyłączy")
+            for i in range(1, 31):
+                time.sleep(1)
+                print("\r", i, end="")
 
-        else:
-            print("Zaraz nastąpi wyłączenie systemu")
-            os.system("shutdown /s /t 5")
+            else:
+                print("Zaraz nastąpi wyłączenie systemu")
+                os.system("shutdown /s /t 5")
+    else:
+        if godzina1 <= czas <= godzina2:
+            print("You have 30 seconds to close this window otherwise the computer will shut down soon")
+            for i in range(1, 31):
+                time.sleep(1)
+                print("\r", i, end="")
+
+            else:
+                print("System shutdown is coming up")
+                os.system("shutdown /s /t 5")
+
 
 def function(link):
     if dziala == "1":
         if shutdown_now == "1":
             shutdown(godzina1,godzina2)
         elif godzina1 <= czas <= godzina2:
-            webbrowser.open(link)
+            if link.strip() == "":
+                pass
+            else:
+                webbrowser.open(link)
 
 day = datetime.datetime.today().weekday()
 czas = datetime.datetime.now().strftime("%H:%M")
@@ -89,4 +107,3 @@ if day == 6:
     godzina2 = settings[84]
 
     function(link7)
-    
