@@ -7,7 +7,7 @@ Update logs:
 
 04.04.2021
 Version 1.2.0:
-- Added English language #Default program language
+- Added English language #en (default program language) or pl to choose
 - Improved the source code
 
 03.04.2021
