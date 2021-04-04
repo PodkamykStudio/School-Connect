@@ -1,85 +1,85 @@
-#ustawienia
-
-#Poniedziałek
-dziala =
+#settings
+en
+#Monday
+active =
 1
 shutdown =
 0
 link1 = 
-https://www.underthepebble.pl/ #przykłady jak mają być wpisywane linki
-godzina1 = 
+https://www.underthepebble.pl/ #example
+time1 =
 08:50
-godzina2 =
+time2 =
 09:10
 
-#Wtorek
-dziala =
+#Tuesday
+active =
 1
 shutdown =
 0
 link2 = 
 https://www.underthepebble.pl/
-godzina1 =
+time1 =
 08:50
-godzina2 =
+time2 =
 09:10
 
-#Środa
-dziala =
+#Wednesday
+active =
 1
 shutdown =
 0
 link3 = 
 https://www.underthepebble.pl/
-godzina1 =
+time1 =
 08:50
-godzina2 =
+time2 =
 09:10
 
-#Czwartek
-dziala =
+#Thursday
+active =
 1
 shutdown =
 0
 link4 =
 https://www.underthepebble.pl/
-godzina1 = 
+time1 =
 08:50
-godzina2 =
+time2 =
 09:10
 
-#Piątek
-dziala =
+#Friday
+active =
 1
 shutdown =
 0
 link5 =
 https://www.underthepebble.pl/
-godzina1 =
+time1 =
 08:50
-godzina2 =
+time2 =
 09:10
 
-#Sobota
-dziala =
+#Saturday
+active =
 1
 shutdown =
 1
 link6 =
 https://www.underthepebble.pl/
-godzina1 =
+time1 =
 08:50
-godzina2 =
+time2 =
 09:10
 
-#Niedziela
-dziala =
+#Sunday
+active =
 1
 shutdown =
-1
+0
 link7 =
 https://www.underthepebble.pl/
-godzina1 =
+time1 =
 08:50
-godzina2 =
+time2 =
 09:10
