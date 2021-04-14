@@ -1,9 +1,14 @@
 # School-Connect
 School Connect is a simple program that automates our morning for remote lessons on Google Meet, among others. The program has a customisation function, thanks to which we can set ourselves what hours our script will run.
 
-Settings.txt should be in the Documents\Under the Pebble\School Connect
+Settings.ini, version and language folder should be in the Documents\Under the Pebble\School Connect
 
 Update logs:
+14.04.2021
+Version 1.3.0:
+- Added check for update function
+- The code has been shortened
+- Improved settings
 
 04.04.2021
 Version 1.2.0:
