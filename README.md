@@ -8,7 +8,7 @@ Update logs:
 Version 1.3.0:
 - Added check for update function
 - The code has been shortened
-- Improved settings
+- Improved the settings
 
 04.04.2021
 Version 1.2.0:
