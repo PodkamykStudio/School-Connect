@@ -1,34 +1,47 @@
-import datetime, time, webbrowser, os
+import datetime, time, webbrowser, os, requests, json
 from pathlib import Path
+from tkinter import *
+from tkinter import messagebox
+from configparser import ConfigParser
 
+def loadtext(language):
+    with open(f"{Path.home()}\\Documents\\Under the Pebble\\School Connect\\Languages\\{language}.json") as file:
+        return json.load(file)
 
+def checkforupdates():
+    res = requests.get("https://raw.githubusercontent.com/PodkamykStudio/School-Connect/main/version")
+    version = res.text
+    dziala = settings["general settings"]["checkforupdates"]
+
+    if dziala == "1":
+        if version > ver:
+            window = Tk()
+            window.eval('tk::PlaceWindow %s center' % window.winfo_toplevel())
+            window.withdraw()
+            if messagebox.askyesno('Update', text["askforupdates"]) == True:
+                webbrowser.open(text["askforupdateslink"])
+            else:
+                pass
 
 def shutdown(godzina1, godzina2):
     czas = datetime.datetime.now().strftime("%H:%M")
-    language = settings[1].strip()
-    if language == "pl":
-        if godzina1 <= czas <= godzina2:
-            print("Masz 30 sekund aby zamknąć to okno inaczej komputer się wyłączy")
-            for i in range(1, 31):
-                time.sleep(1)
-                print("\r", i, end="")
+    if godzina1 <= czas <= godzina2:
+        print(text["askforshutdown"])
+        for i in range(1, 31):
+            time.sleep(1)
+            print("\r", i, end="")
 
-            else:
-                print("Zaraz nastąpi wyłączenie systemu")
-                os.system("shutdown /s /t 5")
-    else:
-        if godzina1 <= czas <= godzina2:
-            print("You have 30 seconds to close this window otherwise the computer will shut down soon")
-            for i in range(1, 31):
-                time.sleep(1)
-                print("\r", i, end="")
+        else:
+            print(text["shutdown"])
+            os.system("shutdown /s /t 5")
 
-            else:
-                print("System shutdown is coming up")
-                os.system("shutdown /s /t 5")
+def function(day):
+    dziala = settings[day]["active"]
+    shutdown_now = settings[day]["shutdown"]
+    link = settings[day]["link"]
+    godzina1 = settings[day]["time1"]
+    godzina2 = settings[day]["time2"]
 
-
-def function(link):
     if dziala == "1":
         if shutdown_now == "1":
             shutdown(godzina1,godzina2)
@@ -38,72 +51,19 @@ def function(link):
             else:
                 webbrowser.open(link)
 
+    if shutdown_now == "0":
+        checkforupdates()
+
 day = datetime.datetime.today().weekday()
 czas = datetime.datetime.now().strftime("%H:%M")
-file = open(f"{Path.home()}\\Documents\\Under the Pebble\\School Connect\\settings.txt")
-settings = file.readlines()
+days = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+file = open(f"{Path.home()}\\Documents\\Under the Pebble\\School Connect\\version")
+settings = ConfigParser()
+settings.read(f"{Path.home()}\\Documents\\Under the Pebble\\School Connect\\settings.ini")
+text = loadtext(settings["general settings"]["language"])
+ver = file.readlines()
+ver = ver[0]
 file.close()
 
 
-if day == 0:
-    dziala = settings[4].strip()
-    shutdown_now = settings[6].strip()
-    link1 = settings[8]
-    godzina1 = settings[10]
-    godzina2 = settings[12]
-
-    function(link1)
-
-if day == 1:
-    dziala = settings[16].strip()
-    shutdown_now = settings[18].strip()
-    link2 = settings[20]
-    godzina1 = settings[22]
-    godzina2 = settings[24]
-
-    function(link2)
-
-if day == 2:
-    dziala = settings[28].strip()
-    shutdown_now = settings[30].strip()
-    link3 = settings[32]
-    godzina1 = settings[34]
-    godzina2 = settings[36]
-
-    function(link3)
-
-if day == 3:
-    dziala = settings[40].strip()
-    shutdown_now = settings[42].strip()
-    link4 = settings[44]
-    godzina1 = settings[46]
-    godzina2 = settings[48]
-
-    function(link4)
-
-if day == 4:
-    dziala = settings[52].strip()
-    shutdown_now = settings[54].strip()
-    link5 = settings[56]
-    godzina1 = settings[58]
-    godzina2 = settings[60]
-
-    function(link5)
-
-if day == 5:
-    dziala = settings[64].strip()
-    shutdown_now = settings[66].strip()
-    link6 = settings[68]
-    godzina1 = settings[70]
-    godzina2 = settings[72]
-
-    function(link6)
-
-if day == 6:
-    dziala = settings[76].strip()
-    shutdown_now = settings[78].strip()
-    link7 = settings[80]
-    godzina1 = settings[82]
-    godzina2 = settings[84]
-
-    function(link7)
+function(days[day])
