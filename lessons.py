@@ -12,9 +12,8 @@ def checkforupdates():
     res = requests.get("https://raw.githubusercontent.com/PodkamykStudio/School-Connect/main/version")
     version = res.text
     dziala = settings["general settings"]["checkforupdates"]
-
     if dziala == "1":
-        if version > ver:
+        if version.strip() != ver.strip():
             window = Tk()
             window.eval('tk::PlaceWindow %s center' % window.winfo_toplevel())
             window.withdraw()
@@ -64,6 +63,5 @@ text = loadtext(settings["general settings"]["language"])
 ver = file.readlines()
 ver = ver[0]
 file.close()
-
 
 function(days[day])
