@@ -4,6 +4,11 @@ School Connect is a simple program that automates our morning for remote lessons
 Settings.ini, version and language folder should be in the Documents\Under the Pebble\School Connect
 
 Update logs:
+15.04.2021
+Version 1.3.1:
+- Bug with updating was fixed
+
+
 14.04.2021
 Version 1.3.0:
 - Added check for update function
